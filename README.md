@@ -1,5 +1,7 @@
 # vue-3-boots-5-socialnet
 
+![alt text](https://i.ytimg.com/vi/qECUcbhMxX0/hqdefault.jpg)
+
 ```
 código del tutorial en español "Vue 3 + Bootstrap 5 | Red Social"
 espero les sea útil ! sientete libre de utilizarlo para tus proyectos
