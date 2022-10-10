@@ -7,6 +7,13 @@ código del tutorial en español "Vue 3 + Bootstrap 5 | Red Social"
 espero les sea útil ! sientete libre de utilizarlo para tus proyectos
 copiarlo, clonarlo
 es un código con fines educativos simplemente
+espero les sea útil !
+Lista en youtube:
+[I'm an inline-style link with title]
+(https://www.google.com "Google's Homepage")
+
+<https://youtu.be/qECUcbhMxX0>
+
 ```
 
 ## Project setup
