@@ -14,25 +14,25 @@
 
 			</button>
 		</header>
-		<article class="d-flex align-items-center position-relative flex-column w-100">
-			<img class="position-relative bottom-0 start-0" src="/imgs/avatar.avif" alt="">
-			<div class="d-flex flex-column align-items-center">
+		<article
+			class="d-flex align-items-center position-relative flex-column w-100 flex-md-row justify-content-md-between">
+			<img class="position-relative bottom-0 start-0 responsive-start" src="/imgs/avatar.avif" alt="">
+			<div class="d-flex flex-column align-items-center name-holder">
 				<h2>Sebastian Maikol</h2>
 				<p>Frontend Developer</p>
 			</div>
 			<div class="d-flex gap-2">
-				<button class="btn btn-primary d-flex gap-2 align-items-center"> <span class="material-icons-outlined">
+				<ButtonComp buttonClassName="btn-primary">
+					<span class="material-icons-outlined">
 						person_add
-					</span> Add friend</button>
-				<button class="btn btn-outline-secondary gap-2 d-flex align-items-center"> <span
-						class="material-icons-outlined">
-						send
-					</span> Message</button>
+					</span> Add friend
+				</ButtonComp>
+				<ButtonComp buttonClassName="btn-outline-secondary">
+					<span class="material-icons-outlined">send</span>
+					Message
+				</ButtonComp>
 			</div>
-			<ButtonComp buttonClassName="btn-primary">
-				<span class="material-icons-outlined">send</span>
-				Message
-			</ButtonComp>
+
 		</article>
 	</section>
 </template>
@@ -82,5 +82,17 @@ article>img {
 	object-fit: contain;
 	border-radius: 50%;
 	margin-top: -84px;
+}
+
+@media (min-width: 768px) {
+	.responsive-start {
+		left: 37px !important;
+		position: absolute !important;
+		/* or whatever value you want */
+	}
+
+	.name-holder {
+		margin-left: 205px;
+	}
 }
 </style>
