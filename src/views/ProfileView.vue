@@ -15,7 +15,7 @@
 			</button>
 		</header>
 		<article
-			class="d-flex align-items-center position-relative flex-column w-100 flex-md-row justify-content-md-between">
+			class="d-flex align-items-center position-relative flex-column px-3 w-100 flex-md-row justify-content-md-between">
 			<img class="position-relative bottom-0 start-0 responsive-start" src="/imgs/avatar.avif" alt="">
 			<div class="d-flex flex-column name-holder align-items-center align-items-md-start">
 				<h2 class="mb-0 fw-bold">Sebastian Maikol</h2>
@@ -35,23 +35,39 @@
 
 		</article>
 	</section>
+	<ModalComp :visible="modalClass" :toggle-visibility="() => showModal = !showModal"></ModalComp>
 </template>
 
 <script>
 import ButtonComp from '../components/ui/ButtonComp.vue'
+import ModalComp from '../components/ModalComp.vue'
 export default {
 	name: 'ProfileView',
 	components: {
-		ButtonComp
+		ButtonComp,
+		ModalComp
 	},
 	methods: {
 		handleAddFriend() {
 			console.log("Add Friend button clicked!")
+			this.showModal = true
 			// your logic here
 		},
 		handleSendMessage() {
 			console.log("Send Message button clicked!")
+			this.showModal = true
+
 			// your logic here
+		}
+	},
+	data() {
+		return {
+			showModal: false
+		}
+	},
+	computed: {
+		modalClass() {
+			return this.showModal ? 'd-block' : 'd-none'
 		}
 	}
 }
