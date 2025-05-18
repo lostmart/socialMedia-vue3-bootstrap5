@@ -8,7 +8,7 @@
 				<span class="material-icons-outlined">
 					photo_camera
 				</span>
-				<span class="fw-bold">
+				<span class="fw-bold d-none d-md-block">
 					Edit cover photo
 				</span>
 
@@ -17,17 +17,17 @@
 		<article
 			class="d-flex align-items-center position-relative flex-column w-100 flex-md-row justify-content-md-between">
 			<img class="position-relative bottom-0 start-0 responsive-start" src="/imgs/avatar.avif" alt="">
-			<div class="d-flex flex-column align-items-center name-holder">
-				<h2>Sebastian Maikol</h2>
+			<div class="d-flex flex-column name-holder align-items-center align-items-md-start">
+				<h2 class="mb-0 fw-bold">Sebastian Maikol</h2>
 				<p>Frontend Developer</p>
 			</div>
 			<div class="d-flex gap-2">
-				<ButtonComp buttonClassName="btn-primary">
+				<ButtonComp buttonClassName="btn-primary" :onClick="handleAddFriend">
 					<span class="material-icons-outlined">
 						person_add
 					</span> Add friend
 				</ButtonComp>
-				<ButtonComp buttonClassName="btn-outline-secondary">
+				<ButtonComp buttonClassName="btn-outline-secondary" :onClick="handleSendMessage">
 					<span class="material-icons-outlined">send</span>
 					Message
 				</ButtonComp>
@@ -43,6 +43,16 @@ export default {
 	name: 'ProfileView',
 	components: {
 		ButtonComp
+	},
+	methods: {
+		handleAddFriend() {
+			console.log("Add Friend button clicked!")
+			// your logic here
+		},
+		handleSendMessage() {
+			console.log("Send Message button clicked!")
+			// your logic here
+		}
 	}
 }
 </script>
