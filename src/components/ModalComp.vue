@@ -1,5 +1,5 @@
 <template>
-    <div :class="visible" class="modal fade" tabindex="-1" ref="modal">
+    <div class="modal fade" tabindex="-1" ref="modal">
         <div class="modal-dialog">
             <div class="modal-content mt-5">
                 <div class="modal-header">
@@ -32,10 +32,6 @@ export default {
         this.modalInstance = new Modal(this.$refs.modal)
     },
     props: {
-        visible: {
-            type: String,
-            required: true
-        },
         toggleVisibility: {
             type: Function,
             required: true

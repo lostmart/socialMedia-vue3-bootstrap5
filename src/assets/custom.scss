@@ -1,0 +1,7 @@
+// Override Bootstrap variables BEFORE importing Bootstrap
+$primary: #5044c9; // ← your custom primary color
+
+// Optional: override other variables like $secondary, $font-family-base, etc.
+
+// Import Bootstrap's full source
+@import "~bootstrap/scss/bootstrap";
