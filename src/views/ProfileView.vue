@@ -1,41 +1,45 @@
 <template>
-	<section class=" d-flex flex-column align-items-center">
-		<header>
-			<img src="/imgs/forest.jpeg" alt="header image" class="img-fluid">
-			<button aria-label="Edit cover photo"
-				class="btn btn-light btn-sm d-flex align-items-center justify-content-center gap-2" tabindex="0">
+	<main>
 
-				<span class="material-icons-outlined">
-					photo_camera
-				</span>
-				<span class="fw-bold d-none d-md-block">
-					Edit cover photo
-				</span>
+		<section class=" d-flex flex-column align-items-center">
+			<header>
+				<img src="/imgs/forest.jpeg" alt="header image" class="img-fluid">
+				<button aria-label="Edit cover photo"
+					class="btn btn-light btn-sm d-flex align-items-center justify-content-center gap-2" tabindex="0"
+					@click="openModal">
 
-			</button>
-		</header>
-		<article
-			class="d-flex align-items-center position-relative flex-column px-3 w-100 flex-md-row justify-content-md-between">
-			<img class="position-relative bottom-0 start-0 responsive-start" src="/imgs/avatar.avif" alt="">
-			<div class="d-flex flex-column name-holder align-items-center align-items-md-start">
-				<h2 class="mb-0 fw-bold">Sebastian Maikol</h2>
-				<p>Frontend Developer</p>
-			</div>
-			<div class="d-flex gap-2">
-				<ButtonComp buttonClassName="btn-primary" :onClick="handleAddFriend">
 					<span class="material-icons-outlined">
-						person_add
-					</span> Add friend
-				</ButtonComp>
-				<ButtonComp buttonClassName="btn-outline-secondary" :onClick="handleSendMessage">
-					<span class="material-icons-outlined">send</span>
-					Message
-				</ButtonComp>
-			</div>
+						photo_camera
+					</span>
+					<span class="fw-bold d-none d-md-block">
+						Edit cover photo
+					</span>
 
-		</article>
-	</section>
-	<ModalComp :visible="modalClass" :toggle-visibility="() => showModal = !showModal"></ModalComp>
+				</button>
+			</header>
+			<article
+				class="d-flex align-items-center position-relative flex-column px-3 w-100 flex-md-row justify-content-md-between">
+				<img class="position-relative bottom-0 start-0 responsive-start" src="/imgs/avatar.avif" alt="">
+				<div class="d-flex flex-column name-holder align-items-center align-items-md-start">
+					<h2 class="mb-0 fw-bold">Sebastian Maikol</h2>
+					<p>Frontend Developer</p>
+				</div>
+				<div class="d-flex gap-2">
+					<ButtonComp buttonClassName="btn-primary" :onClick="openModal">
+						<span class="material-icons-outlined">
+							person_add
+						</span> Add friend
+					</ButtonComp>
+					<ButtonComp buttonClassName="btn-outline-secondary" :onClick="openModal">
+						<span class="material-icons-outlined">send</span>
+						Message
+					</ButtonComp>
+				</div>
+
+			</article>
+		</section>
+		<ModalComp ref="modalComponent" :toggle-visibility="() => showModal = !showModal"></ModalComp>
+	</main>
 </template>
 
 <script>
@@ -52,6 +56,10 @@ export default {
 			console.log("Add Friend button clicked!")
 			this.showModal = true
 			// your logic here
+		},
+		openModal() {
+
+			this.$refs.modalComponent.showModal()
 		},
 		handleSendMessage() {
 			console.log("Send Message button clicked!")
