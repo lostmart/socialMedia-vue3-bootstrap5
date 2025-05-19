@@ -19,7 +19,18 @@
 			</header>
 			<article
 				class="d-flex align-items-center position-relative flex-column px-3 w-100 flex-md-row justify-content-md-between">
-				<img class="position-relative bottom-0 start-0 responsive-start" src="/imgs/avatar.avif" alt="">
+
+				<div class="position-relative" style="width: 168px; height: 168px; margin-top: -84px">
+					<img class="bottom-0 start-0 responsive-start" src="/imgs/avatar.avif" alt="">
+					<ButtonComp
+						buttonClassName="btn-light position-absolute rounded-circle d-flex align-items-center justify-content-center edit-btn"
+						:onClick="openModal">
+						<span class="material-icons-outlined">
+							photo_camera
+						</span>
+					</ButtonComp>
+				</div>
+
 				<div class="d-flex flex-column name-holder align-items-center align-items-md-start">
 					<h2 class="mb-0 fw-bold">Sebastian Maikol</h2>
 					<p>Frontend Developer</p>
@@ -93,15 +104,11 @@ header {
 	position: relative;
 }
 
-header>img {
+header img {
 	max-inline-size: 100%;
 	display: block;
 	aspect-ratio: 16/6;
 	object-fit: cover;
-	/*
-	border-bottom-left-radius: max(0px, min(8px, -999900% + 1.39146e+07px)) 8px;
-	border-bottom-right-radius: max(0px, min(8px, -999900% + 1.39146e+07px)) 8px;
-	*/
 }
 
 header>button {
@@ -110,23 +117,39 @@ header>button {
 	right: 1.25em;
 }
 
-article>img {
+article img {
 	width: 168px;
 	height: 168px;
 	object-fit: contain;
 	border-radius: 50%;
-	margin-top: -84px;
+}
+
+article .edit-btn {
+	width: 36px;
+	height: 36px;
+	right: 3px;
+	bottom: 17px;
+	border: 1px solid grey;
 }
 
 @media (min-width: 768px) {
 	.responsive-start {
 		left: 37px !important;
-		position: absolute !important;
+		position: sticky !important;
 		/* or whatever value you want */
 	}
 
 	.name-holder {
-		margin-left: 205px;
+		margin-left: 190px;
+	}
+
+
+	article .position-relative {
+		position: absolute !important;
+	}
+
+	article .edit-btn {
+		position: absolute !important;
 	}
 }
 </style>
